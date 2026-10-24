@@ -41,6 +41,7 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
+        ./main.nix
         inputs.nixvim.nixosModules.nixvim
         inputs.home-manager.nixosModules.home-manager
 #       inputs.nur.nixosModules.nur
