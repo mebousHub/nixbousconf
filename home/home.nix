@@ -22,6 +22,7 @@
   ./prismlauncher.nix
   ./retroarch.nix
   ./spotify.nix
+  ./ssh/ssh.nix
   ./wiremix.nix
   ./mpd.nix
   ./plasma.nix
