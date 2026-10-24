@@ -6,10 +6,19 @@
  language = "en_US";
  
  addons = with pkgs; [
-                     ankiAddons.adjust-sound-volume
-		     ankiAddons.anki-connect
 		     ankiAddons.review-heatmap
 		     ankiAddons.passfail2
+                     ankiAddons.adjust-sound-volume
+		     (ankiAddons.anki-connect.withConfig {
+		     config = {
+                         apiKey = null;
+                         apiLogPath = null;
+                         ignoreOriginList = [];
+                         webBindAddress = "127.0.0.1";
+                         webBindPort = 8765;
+                         webCorsOriginList = ["http://localhost" "null"];
+			 };
+		       })
 		     ];
  profiles = {
  "User 1" = {

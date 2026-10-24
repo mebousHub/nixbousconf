@@ -11,7 +11,7 @@
   ./git.nix
   ./sway.nix
   ./swaylock.nix
-  ./mpv.nix
+  ./mpv/mpv.nix
   ./rmpc.nix
   ./rofi.nix
   ./kitty.nix
