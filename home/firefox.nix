@@ -1,8 +1,38 @@
 { pkgs, ... }:
 {
   programs.firefox = {
-
   enable = true;
+
+  policies = {
+
+  DefaultDownloadDirectory = "\${home}/Downloads";
+  DisableTelemetry = true;
+
+    EnableTrackingProtection = {
+    Value = true;
+    Cryptomining = true;
+    Fingerprinting = true;
+    SuspectedFingerprinting = true;
+    EmailTracking = true;
+    #Exceptions = "";
+  };
+
+  EncryptedMediaExtensions = { Enabled = true;}; #enables widevine support
+
+  ExtensionSettings = {
+
+    "uBlock0@raymondhill.net" = {
+       private_browsing = true;
+       installation_mode = "force_installed";
+       install_url = "https://addons.mozilla.org/firefox/downloads/latest/uBlock0@raymondhill.net/latest.xpi";
+       };
+    "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = { #enables vimium
+       private_browsing = true;
+       install_url = "https://addons.mozilla.org/firefox/downloads/latest/{d7742d87-e61d-4b78-b8a1-b469842139fa}/latest.xpi";
+       };
+     };
+};
+
   
   profiles = {
 
@@ -12,10 +42,10 @@
 
           packages = with pkgs.nur.repos.rycee.firefox-addons; [
           ublock-origin
+	  vimium
           bitwarden
 	  yomitan
 	  youtube-recommended-videos #unhook_addon
-	  vimium
          ];
        };
 

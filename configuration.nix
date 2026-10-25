@@ -68,6 +68,7 @@
                                            acl
                                            alacritty
 					   wayvr
+
 					   ];
 /*
   systemd.tmpfiles.rules = [

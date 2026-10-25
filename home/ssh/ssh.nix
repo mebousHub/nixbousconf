@@ -9,7 +9,7 @@
       "github.com" = {
         HostName = "github.com";
         User = "git";
-        IdentityFile = "./mebousK";
+        IdentityFile = "~/.config/nixconf/home/ssh/mebousK";
         IdentitiesOnly = true;
         AddKeysToAgent = "yes";
       };
