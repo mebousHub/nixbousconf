@@ -8,6 +8,10 @@
   DefaultDownloadDirectory = "\${home}/Downloads";
   DisableTelemetry = true;
 
+  WebsiteFilter = {
+  Block = [ "https://www.instagram.com/*" "https://x.com/*"];
+  };
+
     EnableTrackingProtection = {
     Value = true;
     Cryptomining = true;

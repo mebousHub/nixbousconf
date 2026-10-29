@@ -44,9 +44,9 @@
   services.displayManager.sddm.enable = true;
   services.printing.enable = false;
 
-  programs.sway.enable = true;
   programs.steam.protontricks.enable = true;
-
+ # programs.sway.enable = true;
+  programs.hyprland.enable = true;
   nix.settings = {
     experimental-features = [
       "nix-command"

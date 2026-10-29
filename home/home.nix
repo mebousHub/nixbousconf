@@ -9,11 +9,12 @@
   imports = [
   ./anki.nix
   ./git.nix
-  ./sway.nix
-  ./swaylock.nix
+#  ./sway.nix
+#  ./swaylock.nix
   ./mpv/mpv.nix
   ./rmpc.nix
   ./rofi.nix
+  ./lutris.nix
   ./kitty.nix
   ./obsidian.nix
   ./obs.nix
@@ -27,6 +28,7 @@
   ./mpd.nix
   ./plasma.nix
   ./firefox.nix
+#  ./hyprland/hyprland.nix
             ];
 
 
@@ -76,6 +78,7 @@ xdg.configFile."niri/config.kdl" = {
     vacuum-tube
     krita
     moonlight-qt
+#    zelda64recomp
 #    (pkgs.callPackage ./package_moonshine.nix { })
 
      
