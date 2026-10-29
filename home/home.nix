@@ -66,7 +66,6 @@ xdg.configFile."niri/config.kdl" = {
     mesen
     parabolic
     parsec-bin
-    pcsx2
     peazip
     protonup-qt
     qbittorrent
