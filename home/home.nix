@@ -9,8 +9,6 @@
   imports = [
   ./anki.nix
   ./git.nix
-#  ./sway/sway.nix
-#  ./sway/swaylock.nix
   ./mpv/mpv.nix
   ./rmpc.nix
   ./rofi.nix
@@ -73,7 +71,6 @@ xdg.configFile."niri/config.kdl" = {
     retroarch-assets
     scrcpy
     spotify
-    swaybg
     vacuum-tube
     krita
     moonlight-qt
