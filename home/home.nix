@@ -9,8 +9,8 @@
   imports = [
   ./anki.nix
   ./git.nix
-#  ./sway.nix
-#  ./swaylock.nix
+#  ./sway/sway.nix
+#  ./sway/swaylock.nix
   ./mpv/mpv.nix
   ./rmpc.nix
   ./rofi.nix

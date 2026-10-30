@@ -7,6 +7,7 @@
       ./modules/amdgpudrivers.nix
       ./modules/games.nix
       ./modules/sunshine.nix
+      ./modules/sway.nix
       ./modules/moonshine.nix
       ./modules/locale.nix
       ./modules/nixvim.nix
@@ -45,8 +46,7 @@
   services.printing.enable = false;
 
   programs.steam.protontricks.enable = true;
- # programs.sway.enable = true;
-  programs.hyprland.enable = true;
+ # programs.hyprland.enable = true;
   nix.settings = {
     experimental-features = [
       "nix-command"
