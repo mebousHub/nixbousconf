@@ -9,7 +9,11 @@
   DisableTelemetry = true;
 
   WebsiteFilter = {
-  Block = [ "https://www.instagram.com/*" "https://x.com/*"];
+  Block = [
+  "https://www.instagram.com/*"
+  "https://x.com/*"
+  "https://www.youtube.com/shorts/*"
+  ];
   };
 
     EnableTrackingProtection = {
