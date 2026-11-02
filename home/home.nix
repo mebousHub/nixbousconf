@@ -25,6 +25,7 @@
   ./wiremix.nix
   ./mpd.nix
   ./plasma.nix
+  ./quickshell.nix
   ./firefox.nix
 #  ./hyprland/hyprland.nix
             ];
@@ -80,7 +81,10 @@ xdg.configFile."niri/config.kdl" = {
      
   #  ventoy-full-qt
 
-            
+    #fonts
+    martian-mono
+    noto-fonts-cjk-sans
+
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of

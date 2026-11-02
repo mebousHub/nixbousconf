@@ -28,6 +28,7 @@
         "${modifier}+m" = "exec ${terminal} wiremix";
         "${modifier}+q" = "exec ${browser}";
         "${modifier}+e" = "exec ${fmanager}";
+        "${modifier}+Shift+z" = "exec swaylock";
 
         "${modifier}+h" = "focus left";
         "${modifier}+j" = "focus down";
@@ -46,11 +47,16 @@
       accel_profile = "flat";
       pointer_accel = "0";
       };
+
       "type:keyboard" = {
       repeat_delay = "200";
       repeat_rate = "100";
       xkb_layout = "us";
       xkb_variant = "intl";
+      };
+
+      "type:tablet_tool" = {
+      map_to_output = "HDMI-A-1";
       };
 };
 
@@ -89,9 +95,16 @@
       border = 2;
 };
       gaps = {
+      inner = 5;
       outer = 15;
+      top = 0;
       };
 
+      bars = [];
+      /*
+      { position = "top"; }
+      ];
+*/
 
     };
   }; 
