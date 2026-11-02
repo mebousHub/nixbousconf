@@ -10,6 +10,7 @@
       ./modules/sway.nix
       ./modules/moonshine.nix
       ./modules/locale.nix
+      ./modules/jellyfin.nix
       ./modules/nixvim.nix
       ./modules/fcitx5.nix
       ./modules/packages.nix
