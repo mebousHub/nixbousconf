@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -7,30 +12,29 @@
   home.homeDirectory = "/home/mebous";
 
   imports = [
-  ./anki.nix
-  ./git.nix
-  ./mpv/mpv.nix
-  ./rmpc.nix
-  ./rofi.nix
-  ./lutris.nix
-  ./kitty.nix
-  ./obsidian.nix
-  ./obs.nix
-  ./thunderbird.nix
-  ./mullvad.nix
-  ./prismlauncher.nix
-  ./retroarch.nix
-  ./spotify.nix
-  ./ssh/ssh.nix
-  ./wiremix.nix
-  ./mpd.nix
-  ./plasma.nix
-  ./quickshell.nix
-  ./firefox.nix
-#  ./hyprland/hyprland.nix
-            ];
+    ./anki.nix
+    ./git.nix
+    ./mpv/mpv.nix
+    ./rmpc.nix
+    ./rofi.nix
+    ./lutris.nix
+    ./kitty.nix
+    ./obsidian.nix
+    ./obs.nix
+    ./thunderbird.nix
+    ./mullvad.nix
+    ./prismlauncher.nix
+    ./retroarch.nix
+    ./spotify.nix
+    ./ssh/ssh.nix
+    ./wiremix.nix
+    ./mpd.nix
+    ./plasma.nix
+    ./quickshell.nix
+    ./firefox.nix
+    #  ./hyprland/hyprland.nix
+  ];
   services.polkit-gnome.enable = true;
-
 
   home.stateVersion = "26.05"; # Please read the comment before changing.
 
@@ -58,11 +62,10 @@
     vacuum-tube
     krita
     moonlight-qt
-#    zelda64recomp
-#    (pkgs.callPackage ./package_moonshine.nix { })
+    #    zelda64recomp
+    #    (pkgs.callPackage ./package_moonshine.nix { })
 
-     
-  #  ventoy-full-qt
+    #  ventoy-full-qt
 
     #fonts
     martian-mono
@@ -70,8 +73,8 @@
     monocraft
 
     (discord.override {
-    # withOpenASAR = true; # can do this here too
-    withVencord = true;
+      # withOpenASAR = true; # can do this here too
+      withVencord = true;
     })
 
   ];
@@ -83,7 +86,5 @@
     # EDITOR = "emacs";
   };
 
-
   programs.home-manager.enable = true;
 }
-

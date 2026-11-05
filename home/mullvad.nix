@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
   programs.mullvad-vpn = {
-  enable = true;
+    enable = true;
   };
 }

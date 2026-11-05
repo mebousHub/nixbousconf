@@ -1,10 +1,10 @@
 { pkgs, ... }:
 {
   programs.swaylock = {
-  enable = true;
+    enable = true;
 
-  settings = {
-  color = "#161616";
+    settings = {
+      color = "#161616";
 
     };
   };

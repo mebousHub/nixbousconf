@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
   programs.prismlauncher = {
-  enable = true;
+    enable = true;
   };
 }

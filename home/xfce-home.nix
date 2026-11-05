@@ -1,9 +1,14 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   gtk = {
     enable = true;
-      iconTheme = {
+    iconTheme = {
       name = "elementary-Xfce-dark";
       package = pkgs.elementary-xfce-icon-theme;
     };

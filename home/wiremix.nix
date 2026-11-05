@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
   programs.wiremix = {
-  enable = true;
+    enable = true;
   };
 }

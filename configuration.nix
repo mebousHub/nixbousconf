@@ -1,48 +1,53 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [
-        #system modules
-      ./hardware-configuration.nix
-      ./modules/fcitx5.nix
-      ./modules/input.nix
-      ./modules/locale.nix
+  imports = [
+    #system modules
+    ./hardware-configuration.nix
+    ./modules/fcitx5.nix
+    ./modules/input.nix
+    ./modules/locale.nix
 
-        #gaming modules
-      ./modules/amdgpudrivers.nix
-      ./modules/games.nix
-      ./modules/moonshine.nix
-#     ./modules/sunshine.nix
-      ./modules/vr.nix
-#      ./modules/duckstation.nix
+    #gaming modules
+    ./modules/amdgpudrivers.nix
+    ./modules/games.nix
+    ./modules/moonshine.nix
+    #     ./modules/sunshine.nix
+    ./modules/vr.nix
+    #      ./modules/duckstation.nix
 
-        #desktop modules
-#      ./modules/cinnamon.nix
-      ./modules/plasma.nix
-      ./modules/sway.nix
-      ./modules/xfce.nix
+    #desktop modules
+    #      ./modules/cinnamon.nix
+    ./modules/plasma.nix
+    ./modules/sway.nix
+    ./modules/xfce.nix
 
-        #package modules
-      ./modules/flatpak.nix
-      ./modules/packages.nix
+    #package modules
+    ./modules/flatpak.nix
+    ./modules/packages.nix
 
-        #misc modules
-      ./modules/jellyfin.nix
-      ./modules/nixvim.nix
+    #misc modules
+    ./modules/jellyfin.nix
+    ./modules/nixvim.nix
 
-    ];
+  ];
 
-    nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
 
   home-manager = {
-  extraSpecialArgs = { inherit inputs; };
-  users.mebous = {
-     imports = [
+    extraSpecialArgs = { inherit inputs; };
+    users.mebous = {
+      imports = [
         ./home/home.nix
-     	inputs.nix-flatpak.homeManagerModules.nix-flatpak
-	inputs.plasma-manager.homeModules.plasma-manager
-     ];
+        inputs.nix-flatpak.homeManagerModules.nix-flatpak
+        inputs.plasma-manager.homeModules.plasma-manager
+      ];
     };
   };
 
@@ -58,7 +63,7 @@
   security.polkit.enable = true;
 
   programs.steam.protontricks.enable = true;
- # programs.hyprland.enable = true;
+  # programs.hyprland.enable = true;
   nix.settings = {
     experimental-features = [
       "nix-command"
@@ -66,55 +71,58 @@
     ];
   };
 
- home-manager.backupFileExtension = "backup";
+  home-manager.backupFileExtension = "backup";
 
- hardware.graphics = {
-   enable = true;
-   extraPackages = with pkgs; [
-   rocmPackages.clr.icd
-   ];
- };
-
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      rocmPackages.clr.icd
+    ];
+  };
 
   environment.systemPackages = with pkgs; [
-                                           acl
-                                           alacritty
-					   wayvr
+    acl
+    alacritty
+    wayvr
+    nixfmt
 
-					   ];
-/*
-  systemd.tmpfiles.rules = [
-  # traverse-only on the parents (lowercase "a" = not recursive)
-  "a+ /home/mebous              - - - - u:shineuser:--x,m::--x"
-  "a+ /home/mebous/.local       - - - - u:shineuser:--x,m::--x"
-  "a+ /home/mebous/.local/share - - - - u:shineuser:--x,m::--x"
+  ];
+  /*
+      systemd.tmpfiles.rules = [
+      # traverse-only on the parents (lowercase "a" = not recursive)
+      "a+ /home/mebous              - - - - u:shineuser:--x,m::--x"
+      "a+ /home/mebous/.local       - - - - u:shineuser:--x,m::--x"
+      "a+ /home/mebous/.local/share - - - - u:shineuser:--x,m::--x"
 
-  "A+ /home/mebous/ - - - - u:shineuser:rwX"
-  "A+ /home/mebous/ - - - - d:u:shineuser:rwX"
-  "A+ /home/mebous/.moonshine_stuff/ - - - - u:shineuser:rwX"
-  "A+ /home/mebous/.moonshine_stuff/ - - - - d:u:shineuser:rwX"
-];
-*/
+      "A+ /home/mebous/ - - - - u:shineuser:rwX"
+      "A+ /home/mebous/ - - - - d:u:shineuser:rwX"
+      "A+ /home/mebous/.moonshine_stuff/ - - - - u:shineuser:rwX"
+      "A+ /home/mebous/.moonshine_stuff/ - - - - d:u:shineuser:rwX"
+    ];
+  */
   networking = {
-  hostName = "mebousnix";  
-  networkmanager.enable = true;
-  firewall.enable = false;
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
+    hostName = "mebousnix";
+    networkmanager.enable = true;
+    firewall.enable = false;
+    # Open ports in the firewall.
+    # networking.firewall.allowedTCPPorts = [ ... ];
+    # networking.firewall.allowedUDPPorts = [ ... ];
+    # Or disable the firewall altogether.
   };
 
   users = {
-    
+
     users."mebous" = {
-    isNormalUser = true;
-    description = "mebous";
-    extraGroups = [ "networkmanager" "wheel" ];
+      isNormalUser = true;
+      description = "mebous";
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
+    };
   };
-};
 
-   services.openssh.enable = true;
+  services.openssh.enable = true;
 
-  system.stateVersion = "26.05";  
+  system.stateVersion = "26.05";
 }

@@ -1,25 +1,29 @@
 { inputs, ... }:
 {
 
- imports = [ inputs.moonshine.nixosModules.default ];
-
-    users = {
-
-  groups.shineuser = {};
+  imports = [ inputs.moonshine.nixosModules.default ];
 
   users = {
 
-  "shineuser" = {
-  isNormalUser = true;
-  createHome = true;
-  home = "/home/moonshine";
-  description = "moonshine user account";
-  group = "shineuser";
-  homeMode = "2770";
-  extraGroups = [ "input" "moonshine" "uinput" ];
+    groups.shineuser = { };
+
+    users = {
+
+      "shineuser" = {
+        isNormalUser = true;
+        createHome = true;
+        home = "/home/moonshine";
+        description = "moonshine user account";
+        group = "shineuser";
+        homeMode = "2770";
+        extraGroups = [
+          "input"
+          "moonshine"
+          "uinput"
+        ];
+      };
     };
   };
-};
 
   services.moonshine = {
     enable = true;

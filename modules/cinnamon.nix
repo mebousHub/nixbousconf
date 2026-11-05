@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
   services.xserver.desktopManager.cinnamon = {
-  enable = true;
-			     };
+    enable = true;
+  };
 }

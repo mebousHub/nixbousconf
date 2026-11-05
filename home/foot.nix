@@ -1,8 +1,8 @@
 { ... }:
 {
   programs.foot = {
-  enable = true;
-  
-  settings = {  };
+    enable = true;
+
+    settings = { };
   };
 }

@@ -3,17 +3,16 @@
   programs.sway.enable = true;
 
   home-manager = {
-  extraSpecialArgs = { inherit inputs; };
-  users.mebous = {
-     imports = [
-     .././home/sway/sway.nix
-     .././home/sway/swaylock.nix
-     .././home/sway/swaypkg.nix
-     .././home/sway/swaync.nix
-     .././home/sway/swayimg.nix
-     ];
+    extraSpecialArgs = { inherit inputs; };
+    users.mebous = {
+      imports = [
+        .././home/sway/sway.nix
+        .././home/sway/swaylock.nix
+        .././home/sway/swaypkg.nix
+        .././home/sway/swaync.nix
+        .././home/sway/swayimg.nix
+      ];
     };
   };
 
 }
-

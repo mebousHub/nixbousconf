@@ -1,8 +1,9 @@
 { pkgs, ... }:
-{ programs.rmpc = {
+{
+  programs.rmpc = {
 
-  enable = true;
-#  config = "";
-};
+    enable = true;
+    #  config = "";
+  };
 
 }

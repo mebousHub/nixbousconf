@@ -1,5 +1,10 @@
-
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 let
   duckstation = pkgs.appimageTools.wrapType2 {
@@ -11,12 +16,13 @@ let
       hash = "sha256-xebwRfaiQggvyvqfAtVq2JXiM7lCcoeI0jKtDAx2XCQ=";
     };
 
-    extraPkgs = pkgs: with pkgs; [
-      libGL
-      vulkan-loader
-      SDL2
-      libxkbcommon
-    ];
+    extraPkgs =
+      pkgs: with pkgs; [
+        libGL
+        vulkan-loader
+        SDL2
+        libxkbcommon
+      ];
 
     meta = {
       description = "DuckStation PlayStation emulator";
@@ -31,4 +37,3 @@ in
     duckstation
   ];
 }
-

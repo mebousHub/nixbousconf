@@ -4,32 +4,32 @@
   home.packages = with pkgs; [
     pcsx2
     dolphin-emu
-    ];
+  ];
 
   programs.lutris = {
-  enable = true;
- 
-  runners = {
+    enable = true;
 
-  pcsx2 = {
-  package = pkgs.pcsx2;
-  settings.runner = {
-  full_boot = true;
-  fullscreen = true;
-  nogui = true;
-  };
-  settings.system = {
-  bios_path = "/home/mebous/emugames/ps2/bios";
-  game_path = "/home/mebous/emugames/ps2";
-  };
-};
+    runners = {
 
-  dolphin = {
-  package = pkgs.dolphin-emu;
-  settings.system = { game_path = "/home/mebous/emugames/wii_gc"; };
- };
+      pcsx2 = {
+        package = pkgs.pcsx2;
+        settings.runner = {
+          full_boot = true;
+          fullscreen = true;
+          nogui = true;
+        };
+        settings.system = {
+          bios_path = "/home/mebous/emugames/ps2/bios";
+          game_path = "/home/mebous/emugames/ps2";
+        };
+      };
+
+      dolphin = {
+        package = pkgs.dolphin-emu;
+        settings.system = {
+          game_path = "/home/mebous/emugames/wii_gc";
+        };
+      };
     };
   };
 }
-
-

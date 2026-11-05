@@ -1,4 +1,8 @@
-{ lib, appimageTools, fetchurl }:
+{
+  lib,
+  appimageTools,
+  fetchurl,
+}:
 
 let
   pname = "gamesentenceminer";
@@ -6,17 +10,19 @@ let
 
   src = fetchurl {
     url = "https://github.com/bpwhelan/GameSentenceMiner/releases/download/v${version}/GameSentenceMiner-${version}.AppImage";
-    hash = "sha256-zfbHTwBZxQGJ6TJm44fKjnZS1GkdmtO+3k4aI4whe38=";   };
+    hash = "sha256-zfbHTwBZxQGJ6TJm44fKjnZS1GkdmtO+3k4aI4whe38=";
+  };
 
   contents = appimageTools.extract { inherit pname version src; };
 in
 appimageTools.wrapType2 {
   inherit pname version src;
 
-  extraPkgs = pkgs: with pkgs; [
-  ffmpeg
-  portaudio
-  ];
+  extraPkgs =
+    pkgs: with pkgs; [
+      ffmpeg
+      portaudio
+    ];
 
   extraInstallCommands = ''
     install -Dm444 ${contents}/*.desktop -t $out/share/applications
