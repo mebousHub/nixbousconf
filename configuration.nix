@@ -3,24 +3,34 @@
 {
   imports =
     [
+        #system modules
       ./hardware-configuration.nix
+      ./modules/fcitx5.nix
+      ./modules/input.nix
+      ./modules/locale.nix
+
+        #gaming modules
       ./modules/amdgpudrivers.nix
       ./modules/games.nix
-      ./modules/sunshine.nix
-      ./modules/sway.nix
       ./modules/moonshine.nix
-      ./modules/locale.nix
-      ./modules/jellyfin.nix
-      ./modules/nixvim.nix
-      ./modules/fcitx5.nix
-      ./modules/packages.nix
-      ./modules/plasma.nix
-      ./modules/input.nix
-#      ./modules/cinnamon.nix
-      ./modules/flatpak.nix
-      ./modules/xfce.nix
+#     ./modules/sunshine.nix
       ./modules/vr.nix
 #      ./modules/duckstation.nix
+
+        #desktop modules
+#      ./modules/cinnamon.nix
+      ./modules/plasma.nix
+      ./modules/sway.nix
+      ./modules/xfce.nix
+
+        #package modules
+      ./modules/flatpak.nix
+      ./modules/packages.nix
+
+        #misc modules
+      ./modules/jellyfin.nix
+      ./modules/nixvim.nix
+
     ];
 
     nixpkgs.config.allowUnfree = true;
@@ -29,7 +39,7 @@
   extraSpecialArgs = { inherit inputs; };
   users.mebous = {
      imports = [
-     ./home/home.nix
+        ./home/home.nix
      	inputs.nix-flatpak.homeManagerModules.nix-flatpak
 	inputs.plasma-manager.homeModules.plasma-manager
      ];
@@ -45,6 +55,7 @@
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.printing.enable = false;
+  security.polkit.enable = true;
 
   programs.steam.protontricks.enable = true;
  # programs.hyprland.enable = true;

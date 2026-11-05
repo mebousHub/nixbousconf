@@ -10,6 +10,7 @@
      .././home/sway/swaylock.nix
      .././home/sway/swaypkg.nix
      .././home/sway/swaync.nix
+     .././home/sway/swayimg.nix
      ];
     };
   };

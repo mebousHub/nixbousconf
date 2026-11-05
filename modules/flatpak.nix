@@ -6,6 +6,11 @@ services.flatpak = {
 
       packages = [
 
+  "org.vinegarhq.Sober"
+  "com.spotify.Client"
+  "com.discordapp.Discord"
+
+#filmcraft flatpak
   rec {
     appId = "ai.storyteller.filmcraft";
     sha256 = "sha256-v4XgkrtQXttdrO4ynqTIRasMYcKYisIBDpkry0UxVEc=";
@@ -14,11 +19,6 @@ services.flatpak = {
       inherit sha256;
     }}";
   }
-
-  "org.vinegarhq.Sober"
-  "com.spotify.Client"
-  "com.discordapp.Discord"
-
   ];
 };
 

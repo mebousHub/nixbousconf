@@ -4,6 +4,5 @@
   enable = true;
   openFirewall = true;
   user = "mebous";
-  group = "jellyfin";
   };
 }
