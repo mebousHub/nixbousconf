@@ -60,6 +60,7 @@
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.printing.enable = false;
+#  systemd.services.moonshine.restartIfChanged = false;
   security.polkit.enable = true;
 
   programs.steam.protontricks.enable = true;
@@ -118,6 +119,7 @@
       extraGroups = [
         "networkmanager"
         "wheel"
+	"input"
       ];
     };
   };

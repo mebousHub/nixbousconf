@@ -71,6 +71,9 @@
     martian-mono
     noto-fonts-cjk-sans
     monocraft
+    profont
+    azeret-mono
+    hermit
 
     (discord.override {
       # withOpenASAR = true; # can do this here too
