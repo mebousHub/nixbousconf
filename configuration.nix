@@ -13,17 +13,18 @@
     ./modules/fcitx5.nix
     ./modules/input.nix
     ./modules/locale.nix
+    ./modules/users.nix
 
     #gaming modules
     ./modules/amdgpudrivers.nix
     ./modules/games.nix
     ./modules/moonshine.nix
-    #     ./modules/sunshine.nix
+    #./modules/sunshine.nix
     ./modules/vr.nix
-    #      ./modules/duckstation.nix
+    #./modules/duckstation.nix
 
     #desktop modules
-    #      ./modules/cinnamon.nix
+    #./modules/cinnamon.nix
     ./modules/plasma.nix
     ./modules/sway.nix
     ./modules/xfce.nix
@@ -38,6 +39,8 @@
 
   ];
 
+  nix.settings = { experimental-features = [ "nix-command" "flakes" ]; };
+
   nixpkgs.config.allowUnfree = true;
 
   home-manager = {
@@ -51,26 +54,28 @@
     };
   };
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = [ "ntfs" ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot = {
+
+  supportedFilesystems = [ "ntfs" ];
+  kernelPackages = pkgs.linuxPackages_latest;
+
+  loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+    };
+
+  };
 
   services.tailscale.enable = true;
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.printing.enable = false;
-#  systemd.services.moonshine.restartIfChanged = false;
   security.polkit.enable = true;
+  services.openssh.enable = true;
+#  systemd.services.moonshine.restartIfChanged = false;
 
   programs.steam.protontricks.enable = true;
-  # programs.hyprland.enable = true;
-  nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-  };
+#  programs.hyprland.enable = true;
 
   home-manager.backupFileExtension = "backup";
 
@@ -88,43 +93,12 @@
     nixfmt
 
   ];
-  /*
-      systemd.tmpfiles.rules = [
-      # traverse-only on the parents (lowercase "a" = not recursive)
-      "a+ /home/mebous              - - - - u:shineuser:--x,m::--x"
-      "a+ /home/mebous/.local       - - - - u:shineuser:--x,m::--x"
-      "a+ /home/mebous/.local/share - - - - u:shineuser:--x,m::--x"
 
-      "A+ /home/mebous/ - - - - u:shineuser:rwX"
-      "A+ /home/mebous/ - - - - d:u:shineuser:rwX"
-      "A+ /home/mebous/.moonshine_stuff/ - - - - u:shineuser:rwX"
-      "A+ /home/mebous/.moonshine_stuff/ - - - - d:u:shineuser:rwX"
-    ];
-  */
   networking = {
     hostName = "mebousnix";
     networkmanager.enable = true;
     firewall.enable = false;
-    # Open ports in the firewall.
-    # networking.firewall.allowedTCPPorts = [ ... ];
-    # networking.firewall.allowedUDPPorts = [ ... ];
-    # Or disable the firewall altogether.
   };
-
-  users = {
-
-    users."mebous" = {
-      isNormalUser = true;
-      description = "mebous";
-      extraGroups = [
-        "networkmanager"
-        "wheel"
-	"input"
-      ];
-    };
-  };
-
-  services.openssh.enable = true;
 
   system.stateVersion = "26.05";
 }
