@@ -19,7 +19,7 @@
     ./modules/amdgpudrivers.nix
     ./modules/games.nix
     ./modules/moonshine.nix
-    #./modules/sunshine.nix
+    ./modules/sunshine.nix
     ./modules/vr.nix
     #./modules/duckstation.nix
 
@@ -79,6 +79,10 @@
 
   home-manager.backupFileExtension = "backup";
 
+    # uinput for mouse and keyboard support in sunshine
+    # Enables the uinput kernel module and creates the uinput group
+  hardware.uinput.enable = true;
+
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
@@ -97,8 +101,25 @@
   networking = {
     hostName = "mebousnix";
     networkmanager.enable = true;
-    firewall.enable = false;
-  };
+
+    firewall = {
+    enable = false;
+
+    allowedTCPPorts = [
+      49995 # HTTPS sunshine
+      50000 # HTTP sunshine
+      50001 # Web UI sunshine
+      50021 # RTSP sunshine
+    ];
+
+    allowedUDPPorts = [
+      50009 # Video sunshine
+      50010 # Control sunshine
+      50011 # Audio sunshine
+      50013 # Microphone sunshine
+       ];
+   };
+ };
 
   system.stateVersion = "26.05";
 }

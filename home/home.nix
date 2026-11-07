@@ -62,6 +62,8 @@
     vacuum-tube
     krita
     moonlight-qt
+    mgba
+    tiny-wii-backup-manager
     #    zelda64recomp
     #    (pkgs.callPackage ./package_moonshine.nix { })
 
@@ -74,12 +76,13 @@
     profont
     azeret-mono
     hermit
-
+    discord
+/*
     (discord.override {
       # withOpenASAR = true; # can do this here too
       withVencord = true;
     })
-
+*/
   ];
 
   home.file = {
