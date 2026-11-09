@@ -16,11 +16,7 @@ in
     config = {
       inherit modifier terminal menu;
       keybindings =
-        /*
-          modifier = config.wayland.windowManager.sway.config.modifier;
-          terminal = config.wayland.windowManager.sway.config.terminal;
-          menu = config.wayland.windowManager.sway.config.menu;
-        */
+
         lib.mkOptionDefault {
           "${modifier}+Return" = "exec ${terminal}";
           "${modifier}+Shift+q" = "kill";
@@ -29,6 +25,8 @@ in
           "${modifier}+q" = "exec ${browser}";
           "${modifier}+e" = "exec ${fmanager}";
           "${modifier}+Shift+z" = "exec swaylock";
+          "${modifier}+Shift+s" = "exec flameshot gui";
+          "${modifier}+Ctrl+s" = "exec flameshot gui";
 
           "${modifier}+h" = "focus left";
           "${modifier}+j" = "focus down";
@@ -65,13 +63,12 @@ in
         DP-1 = {
           mode = "1920x1080@144Hz";
           position = "0 0";
-          bg = "/home/mebous/.config/nixconf/paperwall/103.jpg fit";
-          #      bg = "/home/mebous/paperwall/56.png fill";
+          bg = "/home/mebous/paperwall/103.jpg fit";
         };
         HDMI-A-1 = {
           mode = "1920x1080@74.973Hz";
           position = "1920 0";
-          bg = "/home/mebous/.config/nixconf/paperwall/134.jpg fit";
+          bg = "/home/mebous/paperwall/134.jpg fit";
         };
       };
 

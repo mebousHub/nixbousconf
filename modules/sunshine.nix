@@ -18,7 +18,7 @@
       ping_timeout = "60000";
       fec_percentage = "20";
       minimum_fps_target = "30";
-      output_name = "1";
+      output_name = "DP-1";
       sunshine_name = "mebousCouch";
       sw_preset = "ultrafast";
       upnp = "disabled";

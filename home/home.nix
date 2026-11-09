@@ -22,7 +22,6 @@
     ./obsidian.nix
     ./obs.nix
     ./thunderbird.nix
-    ./mullvad.nix
     ./prismlauncher.nix
     ./retroarch.nix
     ./spotify.nix
@@ -32,6 +31,7 @@
     ./plasma.nix
     ./quickshell.nix
     ./firefox.nix
+    ./flameshot.nix
     #  ./hyprland/hyprland.nix
   ];
   services.polkit-gnome.enable = true;
@@ -42,13 +42,13 @@
 
     android-tools
     bitwarden-desktop
+    bibata-cursors
     bsnes-hd
     davinci-resolve
     eden
     emerald-legacy-launcher
     ffmpeg
     melonloader-installer
-    mullvad
     mesen
     parabolic
     parsec-bin
@@ -76,6 +76,12 @@
     profont
     azeret-mono
     hermit
+    nerd-fonts.symbols-only
+    nerd-fonts.noto
+    nerd-fonts.hack
+
+
+
     discord
 /*
     (discord.override {
@@ -86,6 +92,18 @@
   ];
 
   home.file = {
+  "bralha" = {
+  force = true;
+  source = ./dotfiles/config.ini;
+  target = ".config/mgba/config.ini";
+  };
+
+  "paperwall" = {
+  force = true;
+  source = ./paperwall; recursive = true;
+  target = "paperwall/";
+  };
+
   };
 
   home.sessionVariables = {
