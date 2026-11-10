@@ -2,9 +2,10 @@
 let
   modifier = "Mod4";
   terminal = "kitty";
-  menu = " rofi -show combi -modes combi -combi-modes 'drun,run'";
+  menu = "rofi -show combi -modes combi -combi-modes 'drun,run'";
+  musicmenu = "mechaplayer";
   browser = "firefox";
-  fmanager = "dolphin";
+  fmanager = "kitty yazi";
 in
 {
   wayland.windowManager.sway = {
@@ -19,11 +20,12 @@ in
 
         lib.mkOptionDefault {
           "${modifier}+Return" = "exec ${terminal}";
-          "${modifier}+Shift+q" = "kill";
           "${modifier}+r" = "exec ${menu}";
           "${modifier}+m" = "exec ${terminal} wiremix";
           "${modifier}+q" = "exec ${browser}";
           "${modifier}+e" = "exec ${fmanager}";
+          "${modifier}+Shift+m" = "exec ${musicmenu}";
+          "${modifier}+Shift+q" = "kill";
           "${modifier}+Shift+z" = "exec swaylock";
           "${modifier}+Shift+s" = "exec flameshot gui";
           "${modifier}+Ctrl+s" = "exec flameshot gui";
@@ -154,11 +156,11 @@ in
       };
     };
 
-      bars = [ ];
-      /*
+      bars = [ 
+      
         { position = "top"; }
         ];
-      */
+      
 
     };
   };

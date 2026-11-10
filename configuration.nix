@@ -15,6 +15,7 @@
     ./modules/locale.nix
     ./modules/users.nix
     ./modules/mullvad.nix
+    ./modules/solaar.nix
 
     #gaming modules
     ./modules/amdgpudrivers.nix
@@ -86,6 +87,7 @@
 
   hardware.graphics = {
     enable = true;
+    enable32Bit = true;
     extraPackages = with pkgs; [
       rocmPackages.clr.icd
     ];
@@ -97,6 +99,13 @@
     wayvr
     nixfmt
 
+    winetricks
+    wine
+    wine-wayland
+    wine-staging
+    winePackages.full
+    wine64Packages.full
+    wineWow64Packages.full
   ];
 
   networking = {

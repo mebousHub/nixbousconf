@@ -17,7 +17,9 @@
   environment.systemPackages = with pkgs; [
     ntfs3g
     kdePackages.plasma-bigscreen
+    libnotify
   ];
+
   nixpkgs.config.permittedInsecurePackages = [
     "ventoy-1.1.17"
     "ventoy-qt5-1.1.17"

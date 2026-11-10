@@ -4,7 +4,7 @@
 
   services.sunshine = {
     enable = true;
-    autoStart = true;
+    autoStart = false;
     capSysAdmin = true; # Required for Wayland/KMS capture; omit for Xorg
     openFirewall = true;
 

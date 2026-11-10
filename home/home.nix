@@ -24,6 +24,7 @@
     ./thunderbird.nix
     ./prismlauncher.nix
     ./retroarch.nix
+    ./scripts.nix
     ./spotify.nix
     ./ssh/ssh.nix
     ./wiremix.nix
@@ -32,6 +33,7 @@
     ./quickshell.nix
     ./firefox.nix
     ./flameshot.nix
+    ./yazi.nix
     #  ./hyprland/hyprland.nix
   ];
   services.polkit-gnome.enable = true;
@@ -50,6 +52,7 @@
     ffmpeg
     melonloader-installer
     mesen
+    nicotine-plus
     parabolic
     parsec-bin
     peazip
@@ -106,9 +109,7 @@
 
   };
 
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
+  home.shell.enableBashIntegration = true;
 
   programs.home-manager.enable = true;
 }

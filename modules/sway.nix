@@ -11,6 +11,7 @@
         .././home/sway/swaypkg.nix
         .././home/sway/swaync.nix
         .././home/sway/swayimg.nix
+        .././home/sway/cliphist.nix
       ];
     };
   };

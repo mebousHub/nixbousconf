@@ -8,6 +8,14 @@
 
   programs.lutris = {
     enable = true;
+ 
+     winePackages = [ pkgs.wineWow64Packages.waylandFull
+     		     pkgs.winetricks
+		     pkgs.wineWow64Packages.stagingFull
+		     ];
+		     
+		       defaultWinePackage = pkgs.wineWow64Packages.stagingFull;
+
 
     runners = {
 
