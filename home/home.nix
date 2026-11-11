@@ -107,6 +107,17 @@
   target = "paperwall/";
   };
 
+  "Music" = {
+  source = pkgs.linkFarm "playlist" [
+  {
+  name = "felipe";
+  path = "/home/mebous/soulSeekHome";
+  #source = /home/mebous/soulSeekHome; recursive = true;
+  #target = "Music/";
+  }
+  ];
+  };
+
   };
 
   home.shell.enableBashIntegration = true;

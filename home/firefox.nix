@@ -12,7 +12,7 @@
         Block = [
           "https://www.instagram.com/*"
           "https://x.com/*"
-          "https://www.youtube.com/shorts/*"
+          "https://www.youtube.com/*"
         ];
       };
 
