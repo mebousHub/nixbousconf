@@ -30,7 +30,6 @@
           autoSync = true;
           syncMedia = true;
           autoSyncMediaMinutes = 30;
-          username = "audiodozapkk@gmail.com";
         };
       };
     };
