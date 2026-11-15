@@ -65,12 +65,12 @@ in
         DP-1 = {
           mode = "1920x1080@144Hz";
           position = "0 0";
-          bg = "/home/mebous/paperwall/103.jpg fit";
+          bg = "/home/mebous/paperwall/135.jpg fit";
         };
         HDMI-A-1 = {
           mode = "1920x1080@74.973Hz";
           position = "1920 0";
-          bg = "/home/mebous/paperwall/134.jpg fit";
+          bg = "/home/mebous/paperwall/133.jpg fit";
         };
       };
 

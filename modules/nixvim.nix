@@ -6,8 +6,11 @@
     enable = true;
     viAlias = true;
     vimAlias = true;
+
     colorschemes.base16.enable = true;
+
     colorscheme = "base16-ayu-mirage";
+
     defaultEditor = true;
     opts = {
       number = true;
@@ -15,22 +18,30 @@
       preserveindent = false;
     };
 
-    plugins.lsp = {
-
-      enable = true;
-
-      servers = {
-
-        clangd = {
-          enable = true;
-          package = pkgs.clang-tools;
+    plugins = {
+      lsp = {
+      
+        enable = true;
+      
+        servers = {
+      
+        nixd.enable = true;
+      
+          clangd = {
+            enable = true;
+            package = pkgs.clang-tools;
+          };
+      
+          nil_ls = {
+            enable = true;
+          };
+      
         };
-
-        nil_ls = {
-          enable = true;
-        };
-
       };
+      colorizer = {
+        enable = true;
+	autoLoad = true;
+	};
     };
   };
 }

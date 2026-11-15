@@ -16,6 +16,7 @@
     ./modules/users.nix
     ./modules/mullvad.nix
     ./modules/solaar.nix
+    ./modules/searxng.nix
 
     #gaming modules
     ./modules/amdgpudrivers.nix
@@ -29,7 +30,7 @@
     #./modules/cinnamon.nix
     ./modules/plasma.nix
     ./modules/sway.nix
-#    ./modules/xfce.nix
+    ./modules/xfce.nix
 
     #package modules
     ./modules/flatpak.nix

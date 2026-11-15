@@ -34,6 +34,7 @@
     ./firefox.nix
     ./flameshot.nix
     ./yazi.nix
+    ./ytdlp.nix
     #  ./hyprland/hyprland.nix
   ];
   services.polkit-gnome.enable = true;
@@ -42,56 +43,56 @@
 
   home.packages = with pkgs; [
 
+    #home system tools
     android-tools
-    bitwarden-desktop
     bibata-cursors
+    bitwarden-desktop
+    ffmpeg
+    peazip
+    qpwgraph
+    scrcpy
+    spotdl
+    deno
+#    ventoy-full-qt
+
+    #media
+    mpc
+    spotify
+    vacuum-tube
+
+    #retro games and emulation
     bsnes-hd
-    davinci-resolve
     eden
     emerald-legacy-launcher
-    ffmpeg
-    melonloader-installer
     mesen
+    mgba
+    retroarch-assets
+    tiny-wii-backup-manager
+#    zelda64recomp
+
+    #desktop applications
+    davinci-resolve
+    discord
+    krita
+    melonloader-installer #mod installer for smt3 hd edition
+    moonlight-qt
     nicotine-plus
     parabolic
     parsec-bin
-    peazip
     protonup-qt
     qbittorrent
-    qpwgraph
-    retroarch-assets
-    scrcpy
-    spotify
-    vacuum-tube
-    krita
-    moonlight-qt
-    mgba
-    tiny-wii-backup-manager
-    #    zelda64recomp
-    #    (pkgs.callPackage ./package_moonshine.nix { })
-
-    #  ventoy-full-qt
 
     #fonts
-    martian-mono
-    noto-fonts-cjk-sans
-    monocraft
-    profont
     azeret-mono
     hermit
-    nerd-fonts.symbols-only
-    nerd-fonts.noto
+    martian-mono
+    monocraft
     nerd-fonts.hack
+    nerd-fonts.noto
+    nerd-fonts.symbols-only
+    noto-fonts-cjk-sans
+    profont
 
-
-
-    discord
-/*
-    (discord.override {
-      # withOpenASAR = true; # can do this here too
-      withVencord = true;
-    })
-*/
   ];
 
   home.file = {

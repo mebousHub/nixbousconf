@@ -62,7 +62,7 @@
         search = {
 
           force = true;
-          default = "Brave";
+          default = "searxng";
 
           engines = {
             nix-packages = {
@@ -100,6 +100,37 @@
                 }
               ];
               definedAliases = [ "@brave" ];
+	      icon = "/etc/nixos/home/icons/brave.svg";
+            };
+
+            searxng = {
+              name = "searxng";
+              urls = [
+                {
+                  template = "http://localhost:8888/search";
+              params = [
+                {
+                  name = "q";
+                  value = "{searchTerms}";
+                }
+              ];
+                }
+              ];
+
+              icon = "/etc/nixos/home/icons/searxng.svg";
+              definedAliases = [ "@searx" ];
+            };
+
+            archwiki = {
+              name = "archwiki";
+              urls = [
+                {
+                  template = "https://wiki.archlinux.org/index.php?search={searchTerms}";
+                }
+              ];
+
+              icon = "/etc/nixos/home/icons/archlinux.svg";
+              definedAliases = [ "@archwiki" ];
             };
           };
         };
