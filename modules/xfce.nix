@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
  
-  imports = [ ./xfconf.nix ];
+#  imports = [ ./xfconf.nix ];
 
   environment.xfce.excludePackages = with pkgs; [
     mousepad
