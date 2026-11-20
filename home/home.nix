@@ -54,7 +54,6 @@
     qpwgraph
     scrcpy
     spotdl
-#    ventoy-full-qt
 
     #media
     mpc

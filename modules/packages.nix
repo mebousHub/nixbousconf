@@ -21,8 +21,6 @@
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
-    "ventoy-1.1.17"
-    "ventoy-qt5-1.1.17"
     "electron-39.8.10"
   ];
 }

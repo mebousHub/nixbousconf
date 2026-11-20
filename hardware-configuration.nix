@@ -32,10 +32,10 @@
   };
 
 
-  fileSystems."/mnt/segundossd" = {
-    device = "/dev/disk/by-uuid/065b25f8-3c65-4df1-8eb5-ce9775bee0b6";
-    fsType = "btrfs";
-  };
+# fileSystems."/mnt/segundossd" = {
+#   device = "/dev/disk/by-uuid/065b25f8-3c65-4df1-8eb5-ce9775bee0b6";
+#   fsType = "btrfs";
+# };
 
 
   fileSystems."/nix" = {
