@@ -13,26 +13,27 @@
 
   imports = [
     ./anki.nix
+    ./firefox.nix
+    ./flameshot.nix
     ./git.nix
     ./mpv/mpv.nix
+    ./mpd.nix
     ./rmpc.nix
     ./rofi.nix
     ./lutris.nix
     ./kitty.nix
-    ./obsidian.nix
     ./obs.nix
     ./thunderbird.nix
+    ./teste.nix
     ./prismlauncher.nix
     ./retroarch.nix
     ./scripts.nix
     ./spotify.nix
     ./ssh/ssh.nix
     ./wiremix.nix
-    ./mpd.nix
     ./plasma.nix
     ./quickshell.nix
-    ./firefox.nix
-    ./flameshot.nix
+    ./waybar.nix
     ./yazi.nix
     ./ytdlp.nix
     #  ./hyprland/hyprland.nix
@@ -47,12 +48,12 @@
     android-tools
     bibata-cursors
     bitwarden-desktop
+    deno
     ffmpeg
     peazip
     qpwgraph
     scrcpy
     spotdl
-    deno
 #    ventoy-full-qt
 
     #media
@@ -71,9 +72,11 @@
 #    zelda64recomp
 
     #desktop applications
+    basalt
     davinci-resolve
     discord
     krita
+    logseq
     melonloader-installer #mod installer for smt3 hd edition
     moonlight-qt
     nicotine-plus
@@ -81,6 +84,9 @@
     parsec-bin
     protonup-qt
     qbittorrent
+
+    #gtk themes
+    chicago95 # windows 95 theme
 
     #fonts
     azeret-mono

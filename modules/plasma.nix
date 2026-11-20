@@ -6,6 +6,5 @@
     plasma-browser-integration
     konsole
     qrca
-    elisa
   ];
 }

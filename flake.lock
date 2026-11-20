@@ -243,7 +243,8 @@
         "nixpkgs-mozc": "nixpkgs-mozc",
         "nixvim": "nixvim",
         "nur": "nur",
-        "plasma-manager": "plasma-manager"
+        "plasma-manager": "plasma-manager",
+        "windows7-gtk": "windows7-gtk"
       }
     },
     "systems": {
@@ -260,6 +261,22 @@
         "owner": "nix-systems",
         "ref": "future-26.11",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "windows7-gtk": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1726413159,
+        "narHash": "sha256-itEHU/9LeraH0n3a2F/r8FWF8Vj7BoF1FFUW2bLNJH4=",
+        "owner": "B00merang-Project",
+        "repo": "Windows-7",
+        "rev": "943b5307b349d3526068be0fa32f7549ee37ab45",
+        "type": "github"
+      },
+      "original": {
+        "owner": "B00merang-Project",
+        "repo": "Windows-7",
         "type": "github"
       }
     }

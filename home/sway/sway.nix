@@ -132,27 +132,27 @@ in
       colors = {
 
       focused = {
-        border =      "#e9256b";
-        background =  "#e9256b";
+        border =      "#d3cbd1";
+        background =  "#d3cbd1";
         text =        "#5c0d2a";
-	indicator =   "#e9256b";
-	childBorder = "#e9256b";
+	indicator =   "#d3cbd1";
+	childBorder = "#d3cbd1";
       };
 
       focusedInactive = {
-        border =     "#50041f";
-        background = "#50041f";
-        text =       "#5c0d2a";
-	indicator =   "#50041f";
-	childBorder = "#50041f";
+        border =      "#101110";
+        background =  "#101110";
+        text =        "#101110";
+	indicator =   "#101110";
+	childBorder = "#101110";
       };
 
       unfocused = {
-        border =     "#3e2a31";
-        background = "#3e2a31";
-        text =       "#5c0d2a";
-	indicator =   "#3e2a31";
-	childBorder = "#3e2a31";
+        border =      "#101110";
+        background =  "#101110";
+        text =        "#101110";
+	indicator =   "#101110";
+	childBorder = "#101110";
       };
     };
 

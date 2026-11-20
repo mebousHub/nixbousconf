@@ -30,6 +30,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    windows7-gtk = {
+      url = "github:B00merang-Project/Windows-7";
+      flake = false;
+    };
+
     #    niri = {
     #      url = "github:sodiboo/niri-flake";
     #      inputs.nixpkgs.follows = "nixpkgs";

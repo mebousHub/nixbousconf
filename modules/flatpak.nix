@@ -9,6 +9,7 @@
       "org.vinegarhq.Sober"
       "com.spotify.Client"
       "com.discordapp.Discord"
+      "md.obsidian.Obsidian"
 
       #filmcraft flatpak
       rec {
